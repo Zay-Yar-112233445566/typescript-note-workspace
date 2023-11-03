@@ -2,6 +2,10 @@ Fiber Cables- No Distance
 Copper Wire	- 300 Meter(around 1,000 feet)
 --------------------------------------------------------
 
+**************************************
+*************Arrays*******************
+**************************************
+
 
 
 let stringArr= ['one','two','Dave']		//only string
@@ -44,8 +48,10 @@ let bands: string[]=[]
 bands.push('Van Halen'); // OK
 
 
+**************************************
+************Tuples********************
+**************************************
 
-//Tuple
 
 ************************************
 let myTuple: [string, number, boolean ]= ['Dave',42,true]	
@@ -61,13 +67,246 @@ myTuple[1]=42 // ok
 
 
 
-Objects
-******************************
+**************************************
+*************Objects******************
+**************************************
  
 let myObj: object
 
 myObj = []
-console.log(typeof myObj)
+console.log(typeof myObj)// will display the type of variable
+
+
+let bands:string[]=[];
+
+myObj = bands
+
+myObj={}
+
+
+//used for constant object for only one
+
+const exampleObj={
+	 prop1: 'Dave',
+	 prop2: true,
+}
+
+exampleObj.prop2 = 25; //not ok
+exampleObje.prop1= 'Zayar'// ok
+
+
+
+**************************************
+*************Use For Type*************
+**************************************
+
+type Guitarist ={
+	name: string,
+	active: boolean,
+    //active?: boolean,// optional 
+	albums: (string|number)[]
+}
+
+
+
+let evh: Guitarist ={
+	name: 'Eddie',
+	active: false,
+	albums: [1984,5150,'Your Name'];
+}
+
+let jp: Guitarist= {
+	name: 'Eddie',
+	active: false,
+	albums: [1984,5150,'Your Name'];
+}
+
+
+//
+
+evh= jp// is ok
+
+let jp = {
+	name: 'Eddie',
+	albums: [1984,5150,'Your Name'];
+}
+
+evh= jp// is not ok
+
+
+
+let japan: Guitarist{
+	name: 'Eddie',
+	albums: [1984,5150,'Your Name'];
+}
+
+// is ok, because active property is optional type.
+
+*****************************************************************************
+
+
+const greetGuitarlist = (guitarlist : Guitarlist) => {
+	return 'Hello ${guitarlist.name}!'
+}
+ 
+console.log(greetGuitarist(jp))// will display the guitarlist's name
+
+
+
+**************************************
+*************Interface****************
+**************************************
+
+
+interface Guitarist {
+	name ?: string,		// in this usage, ? is not refer to optional/ to condition
+	active: boolean,
+	albums: (string | number)[]
+
+}
+
+
+const greetGuitarist = (guitarist:Guitarist) =>{
+	if(guitarist.name){
+
+		return 'Hello ${guitarist.name.toUpperCase()}';
+	}
+	
+	return 'Hello Developer!';
+}
+
+
+**************************************
+*************Enum*********************
+**************************************
+//Enums
+//"Unlike most TypeScript features, Enums are not a type-level addition to JavaScript but something added to the language and runtime"
+
+
+
+enum Grade{
+	U=1,
+	D,
+	C,
+	B,
+	A,
+	
+}
+
+console.log(Grade.D);//will display 2, because of auto increment
+
+
+----------------------------------------------------------------
+enum Direction{
+
+	Up,
+	Down,
+	Left,
+	Right,
+}
+console.log(Direction.Up)// will display 0
+console.log(Direction.Left)//will display 2  // auto assign 0 to the first element
+
+
+----------------------------------------------------------------
+
+enum UserResponse{
+	No=0,
+	Yes=1,
+}
+
+function responsd(recipient: string, message: UserResponse ):void{
+	//.....
+}
+
+respond("Princess Caroline",UserResponse.Yes);
+
+
+
+
+
+String enums
+----------------------------------------------------------------
+
+enum Prize{
+	Up="UP",
+	Down="DOWN",
+	Left="LEFT",
+	Right="RIGHT",
+}
+
+
+
+
+Heterogeneous enums(mixed with string and numeric members)
+----------------------------------------------------------------
+
+enum BooleanLikeHeterogeneousEnum{
+
+	No=0,
+	Yes="YES",
+}
+
+
+Computed and constant members
+----------------------------------------------------------------
+
+
+//E.X is constant:
+enum E{
+
+	X,
+}
+
+// All enum members in 'E1' and 'E2' are constant.
+
+
+
+enum E1{
+	X,
+	Y,
+	Z,
+}
+
+
+enum E2{
+	A=1,
+	B,
+	C,
+}
+----------------------------------------------------------------
+enum FileAccess{
+
+	//constant members
+	None,
+	Read= 1<<1,
+	Write= 1<< 2,
+	ReadWrite= Read | Write,
+
+	//compute member
+	G="123".length,
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

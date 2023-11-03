@@ -1,0 +1,95 @@
+Fiber Cables- No Distance
+Copper Wire	- 300 Meter(around 1,000 feet)
+--------------------------------------------------------
+
+
+
+let stringArr= ['one','two','Dave']		//only string
+		
+let guitars = ['Start','Les Paul', 5150]	// string | number
+	
+let mixedData= ['EVH',1984, true]			// string | number |boolean
+
+
+
+//testing
+
+stringArr[0]= 41// not ok
+stringArr[0]='Mg Mg'// Ok
+
+stringArr.push('hey')
+
+guitors[0]= 1984
+guitosr.unshift('Jim')
+
+
+stringArr= guitars; 
+
+//not ok , stringArr is only String array and 
+//guitars is string | number
+
+
+guitars= stringArr // is ok
+
+also,
+
+mixedData= guitars// ok
+guitars= mixedData // not OK
+
+
+
+let test =[]
+let bands: string[]=[]
+
+bands.push('Van Halen'); // OK
+
+
+
+//Tuple
+
+************************************
+let myTuple: [string, number, boolean ]= ['Dave',42,true]	
+// tuple accept only predefined datatype
+
+let mixed=['John',1,false]
+
+myTuple =mixed // not ok, mixed type array can't assign to tuple type
+
+
+
+myTuple[1]=42 // ok
+
+
+
+Objects
+******************************
+ 
+let myObj: object
+
+myObj = []
+console.log(typeof myObj)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

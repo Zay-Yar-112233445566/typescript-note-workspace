@@ -2,3 +2,24 @@ type stringOrNumber= string | number
 
 type stringOrNumberArray= ( string | number) []
 
+ //Literal types;
+
+
+let myName:'Zay'
+
+let userName:'Dave' | 'John' | 'Amy'	// one of these
+
+userName='Amy'; // OK
+userName='Ko Ko Lay'; // not OK
+
+
+//functions
+
+const add = (a: number, b: number): number =>{
+	return a+b
+}
+
+
+const logMsg = (message: any) =>{
+	console.log(message)
+}

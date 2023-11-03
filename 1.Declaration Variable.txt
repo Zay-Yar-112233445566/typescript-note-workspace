@@ -1,0 +1,36 @@
+Declaration Variables (Data Type)
+----------------------------------
+
+let myName :string= 'Dave'
+let meaningOfLife :number;
+let isLoading: boolean;
+let album: any;
+
+myName='John'
+meaningOfLie =42
+isLoading=true
+album=true
+
+//or 
+
+let code: string | number;
+
+code='C00125';// is ok
+code= 121255; // is ok
+
+let postId: string | number
+let isActive: number | boolean
+
+let re: RegExp= \/w+/g
+
+
+
+//Constant Declaration
+-----------------------
+const sum=(a:number, b:number) =>{
+ 	return a+b;
+}
+
+const generateAPI = (url: string, code: string)=>{
+	return url+code;
+}

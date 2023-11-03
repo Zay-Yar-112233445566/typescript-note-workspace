@@ -1,0 +1,2 @@
+-npm i typescript -g
+		-Installation typestript compiler

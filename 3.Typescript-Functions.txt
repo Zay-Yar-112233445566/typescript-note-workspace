@@ -1,7 +1,13 @@
+
+**************************************************
+****************Type Aliases**********************
+**************************************************
+
 type stringOrNumber= string | number
 
 type stringOrNumberArray= ( string | number) []
 
+**************************************************
  //Literal types;
 
 
@@ -10,10 +16,10 @@ let myName:'Zay'
 let userName:'Dave' | 'John' | 'Amy'	// one of these
 
 userName='Amy'; // OK
-userName='Ko Ko Lay'; // not OK
+userName='Ko Ko Lay'; // not OK// only predifined values
+***********may  useful in name based authentication
 
 
-//functions
 
 const add = (a: number, b: number): number =>{
 	return a+b
@@ -23,3 +29,213 @@ const add = (a: number, b: number): number =>{
 const logMsg = (message: any) =>{
 	console.log(message)
 }
+
+**************************************************
+*******************Functions**********************
+**************************************************
+
+
+let substract = function (c: number, d: number):
+
+number {
+	return c-d
+}
+
+
+type mathFunction = (a: number, b: number) => number
+
+
+let multiply: mathFunction = function(c,d)
+ {
+	return c*d
+
+}
+
+
+*******************Optional Parameters*************************
+
+const addAll= (a: number, b:number: c?: number):
+number=>{
+
+	if(typeOf c!== 'undifined'){
+	return a+b+c	
+}
+	return a+b
+}
+
+
+
+*******************Default Param Value*************************
+
+const sumAll =(a: number, b:number, c: number= 20){
+	return a+b+c
+
+}
+
+
+
+type mathFunction= (a:number, b:number)=> number
+
+let multiply: mathFunction= function(c,d){
+	return c*d
+
+}
+
+let addition: mathFunction= function(c,d){
+	return c+d;
+}
+
+let divided: mathFunction = functioin(c,d){
+	return c/d;
+}
+
+
+console.log(multiply(2,3));
+
+
+
+
+
+
+------------------------
+---------Interface------
+
+
+
+
+
+
+**********************************************************************************************************************************OOnline Learning************************************
+
+
+
+
+Functions
+-------------
+
+//Named functions
+function add(x,y){
+	return x+y;
+
+}
+
+//Anonymous function
+let myAdd= function(x,y){
+	return x+y;
+}
+
+
+
+Function Types
+---------------------------
+
+
+function add(x:number, y:number): number{
+	return x+y;
+}
+
+-----------------
+
+let myAdd = function(x:number, y:number):number{
+	return x+y;
+}
+
+
+
+We can add types to each of the parameters and then to the function itself to add a return type. TypeScript can figure the return type out by looking at the return statements, so we can also optionally leave this off in many cases.
+
+
+
+
+Function Type Expressions
+--------------------------
+
+function greeter(fn: (a:string)=> void){
+	fn("Hello world");
+}
+
+
+
+
+
+function printToConsole(s:String){
+	console.log(s);
+}
+
+
+greeter(printToConsole);
+
+
+Of course, we can use a type alias to name a function type:
+
+
+type GreetFunction = (a: string) => void;
+
+function greeter(fn: GreetFunction){
+	//....
+}
+
+
+_------------------------------------------------------------------------
+
+Call Signatures
+--------------------------
+type DescriableFunction ={
+	description: string;
+	(someArg: number): boolean;
+
+}
+
+function doSomething(fn: DescriableFunction){
+
+	console.log(fn.description + " returned "+ fn(6));
+}
+
+
+function myFunc(someArg: number){
+	return someArg > 3;
+}
+
+
+myFunc.description= "default description";
+ doSomething(myFunc);
+
+
+
+
+
+_------------------------------------------------------------------------
+
+Construct Signatures
+--------------------------
+
+
+type SomeConstructor= {
+	new (s: string): SomeObject;
+};
+
+ function fn(ctor: SomeConstructor){
+
+	return new ctor("hello");
+}
+
+
+------------
+interface CallOrConstruct {
+	(n?: number): string;
+	new (s: string):Date;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
